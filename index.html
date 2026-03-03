@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Holi 2025 - Shri Swami Smarth Engineers Ltd</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #fda085 100%);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            overflow-x: hidden;
+            cursor: pointer;
+            position: relative;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Floating Color Balls Background */
+        .floating-balls {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .ball {
+            position: absolute;
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite;
+            opacity: 0.6;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(180deg); }
+        }
+
+        /* Main Container */
+        .container {
+            position: relative;
+            z-index: 10;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Happy Holi Title */
+        .holi-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 5rem;
+            color: #fff;
+            text-shadow: 
+                3px 3px 0 #ff6b6b,
+                6px 6px 0 #feca57,
+                9px 9px 0 #48dbfb,
+                12px 12px 0 #ff9ff3,
+                15px 15px 30px rgba(0,0,0,0.3);
+            margin-bottom: 20px;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Emoji decoration */
+        .emoji-line {
+            font-size: 2rem;
+            margin: 10px 0;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        /* Main Card */
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            padding: 50px;
+            max-width: 800px;
+            box-shadow: 
+                0 25px 80px rgba(0,0,0,0.3),
+                0 0 0 5px rgba(255,255,255,0.5),
+                inset 0 0 60px rgba(255,255,255,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent,
+                rgba(255, 107, 107, 0.1),
+                transparent,
+                rgba(254, 202, 87, 0.1),
+                transparent
+            );
+            animation: shimmer 3s linear infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Company Name - Clickable */
+        .company-name {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(45deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3, #1dd1a1);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: colorShift 3s ease infinite;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            position: relative;
+            z-index: 1;
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 15px;
+        }
+
+        .company-name:hover {
+            transform: scale(1.05);
+            background-color: rgba(255,255,255,0.5);
+        }
+
+        @keyframes colorShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Message Content */
+        .message {
+            font-size: 1.2rem;
+            color: #444;
+            line-height: 1.8;
+            margin: 25px 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .highlight {
+            color: #ff6b6b;
+            font-weight: 600;
+        }
+
+        /* Rainbow Text */
+        .rainbow-text {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, 
+                #ff6b6b, #feca57, #48dbfb, #1dd1a1, #ff9ff3, #ff6b6b);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: rainbow 2s linear infinite;
+            margin: 20px 0;
+        }
+
+        @keyframes rainbow {
+            to { background-position: 200% center; }
+        }
+
+        /* Pichkari Container */
+        .pichkari-container {
+            margin: 30px 0;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            position: relative;
+            z-index: 100;
+        }
+
+        .pichkari-container:hover {
+            transform: scale(1.1);
+        }
+
+        .pichkari {
+            font-size: 100px;
+            filter: drop-shadow(3px 3px 5px rgba(0,0,0,0.3));
+            animation: shake 0.5s ease-in-out infinite;
+            display: inline-block;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: rotate(-5deg); }
+            50% { transform: rotate(5deg); }
+        }
+
+        .pichkari-text {
+            font-size: 1rem;
+            color: #666;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        /* Color Splashes */
+        .color-splash {
+            position: fixed;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: splash 1s ease-out forwards;
+            z-index: 1000;
+        }
+
+        @keyframes splash {
+            0% {
+                transform: scale(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(3) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Flying Color Particles */
+        .color-particle {
+            position: fixed;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        /* Rangoli Particles */
+        .rangoli-particle {
+            position: fixed;
+            pointer-events: none;
+            z-index: 1000;
+            font-size: 30px;
+            animation: rangoliFly 2s ease-out forwards;
+        }
+
+        @keyframes rangoliFly {
+            0% {
+                opacity: 1;
+                transform: translateY(0) rotate(0deg) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-400px) rotate(720deg) scale(0);
+            }
+        }
+
+        /* Happy Holi Popup */
+        .holi-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            background: linear-gradient(135deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3);
+            padding: 60px 80px;
+            border-radius: 30px;
+            z-index: 2000;
+            animation: popupIn 0.5s ease forwards;
+            box-shadow: 0 30px 100px rgba(0,0,0,0.5);
+        }
+
+        @keyframes popupIn {
+            0% { transform: translate(-50%, -50%) scale(0) rotate(-180deg); }
+            100% { transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+        }
+
+        .holi-popup h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 5rem;
+            color: #fff;
+            text-shadow: 3px 3px 10px rgba(0,0,0,0.3);
+            animation: popText 0.5s ease-out;
+        }
+
+        @keyframes popText {
+            0% { opacity: 0; transform: translateY(50px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .holi-popup .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2rem;
+            color: #fff;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .holi-popup .close-btn:hover {
+            transform: rotate(90deg);
+        }
+
+        /* Decorative Elements */
+        .decoration {
+            position: absolute;
+            font-size: 40px;
+            animation: spin 4s linear infinite;
+        }
+
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+
+        .dec-1 { top: 20px; left: 20px; animation-delay: 0s; }
+        .dec-2 { top: 20px; right: 20px; animation-delay: 1s; }
+        .dec-3 { bottom: 20px; left: 20px; animation-delay: 2s; }
+        .dec-4 { bottom: 20px; right: 20px; animation-delay: 3s; }
+
+        /* Footer */
+        .footer {
+            margin-top: 30px;
+            color: rgba(255,255,255,0.9);
+            font-size: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Click instruction */
+        .instruction {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.7);
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            z-index: 100;
+            animation: fadeInUp 1s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateX(-50%) translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .holi-title {
+                font-size: 3rem;
+            }
+            .card {
+                padding: 30px 20px;
+                margin: 20px;
+            }
+            .company-name {
+                font-size: 1.3rem;
+            }
+            .message {
+                font-size: 1rem;
+            }
+            .rainbow-text {
+                font-size: 1.8rem;
+            }
+            .pichkari {
+                font-size: 70px;
+            }
+            .holi-popup h1 {
+                font-size: 3rem;
+            }
+            .holi-popup {
+                padding: 40px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Background Balls -->
+    <div class="floating-balls" id="floatingBalls"></div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <div class="emoji-line">🌸✨🎨✨🌸</div>
+        
+        <h1 class="holi-title">Happy Holi 2025!</h1>
+        
+        <div class="card">
+            <!-- Decorative corners -->
+            <span class="decoration dec-1">🎨</span>
+            <span class="decoration dec-2">🌈</span>
+            <span class="decoration dec-3">💐</span>
+            <span class="decoration dec-4">✨</span>
+
+            <div class="emoji-line">🌸✨ Wishing You a Joyous & Colorful Holi! ✨🌸</div>
+            
+            <p class="message">
+                On behalf of <span class="company-name" id="companyName">Shri Swami Smarth Engineers Ltd</span>, 
+                we extend our warmest wishes to all our valued <span class="highlight">clients</span>, 
+                <span class="highlight">partners</span>, and <span class="highlight">team members</span>.
+            </p>
+            
+            <p class="message">
+                May this festival of colors bring <span class="highlight">happiness</span>, 
+                <span class="highlight">prosperity</span>, <span class="highlight">success</span>, 
+                and <span class="highlight">vibrant new opportunities</span> to your life and business. 
+                Let's celebrate the spirit of <span class="highlight">unity</span>, 
+                <span class="highlight">positivity</span>, and <span class="highlight">growth</span> together.
+            </p>
+
+            <!-- Pichkari -->
+            <div class="pichkari-container" id="pichkari">
+                <div class="pichkari">🔫</div>
+                <p class="pichkari-text">👆 Click the Pichkari to spray colors! 🎨</p>
+            </div>
+            
+            <div class="rainbow-text">🌈 Happy Holi! 🌈</div>
+            
+            <div class="emoji-line">🎊🥳🎉💝🎊</div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 Shri Swami Smarth Engineers Ltd | Spreading Colors of Joy! 🌈</p>
+        </div>
+    </div>
+
+    <!-- Click Instruction -->
+    <div class="instruction">
+        ✨ Click anywhere for colors | 🔫 Click Pichkari for rangoli | 📛 Click company name for surprise!
+    </div>
+
+    <script>
+        // Holi Colors Array
+        const holiColors = [
+            '#FF6B6B', '#FECA57', '#48DBFB', '#FF9FF3', '#1DD1A1',
+            '#5F27CD', '#FF9F43', '#EE5A24', '#00D2D3', '#F368E0',
+            '#FF6348', '#7BED9F', '#70A1FF', '#FFA502', '#FF4757',
+            '#2ED573', '#1E90FF', '#FF69B4', '#FFD700', '#00FA9A'
+        ];
+
+        // Rangoli emojis
+        const rangoliEmojis = ['🌸', '🌺', '🌼', '🌻', '💐', '🏵️', '🌷', '🪷', '✨', '💫', '⭐', '🎨', '🎭', '🎪', '🎠'];
+
+        // Get random color
+        function getRandomColor() {
+            return holiColors[Math.floor(Math.random() * holiColors.length)];
+        }
+
+        // Get random emoji
+        function getRandomEmoji() {
+            return rangoliEmojis[Math.floor(Math.random() * rangoliEmojis.length)];
+        }
+
+        // Create floating background balls
+        function createFloatingBalls() {
+            const container = document.getElementById('floatingBalls');
+            for (let i = 0; i < 20; i++) {
+                const ball = document.createElement('div');
+                ball.className = 'ball';
+                ball.style.width = Math.random() * 100 + 30 + 'px';
+                ball.style.height = ball.style.width;
+                ball.style.left = Math.random() * 100 + '%';
+                ball.style.top = Math.random() * 100 + '%';
+                ball.style.background = getRandomColor();
+                ball.style.animationDelay = Math.random() * 5 + 's';
+                ball.style.animationDuration = Math.random() * 5 + 5 + 's';
+                container.appendChild(ball);
+            }
+        }
+
+        // Create color splash on click
+        function createColorSplash(x, y) {
+            const splash = document.createElement('div');
+            splash.className = 'color-splash';
+            splash.style.left = x + 'px';
+            splash.style.top = y + 'px';
+            splash.style.width = '100px';
+            splash.style.height = '100px';
+            splash.style.background = `radial-gradient(circle, ${getRandomColor()}, ${getRandomColor()}, transparent)`;
+            document.body.appendChild(splash);
+
+            // Create multiple particles
+            for (let i = 0; i < 15; i++) {
+                createColorParticle(x, y);
+            }
+
+            setTimeout(() => splash.remove(), 1000);
+        }
+
+        // Create flying color particles
+        function createColorParticle(x, y) {
+            const particle = document.createElement('div');
+            particle.className = 'color-particle';
+            
+            const size = Math.random() * 20 + 10;
+            const color = getRandomColor();
+            const angle = Math.random() * 360;
+            const distance = Math.random() * 200 + 100;
+            const duration = Math.random() * 1 + 0.5;
+
+            particle.style.width = size + 'px';
+            particle.style.height = size + 'px';
+            particle.style.left = x + 'px';
+            particle.style.top = y + 'px';
+            particle.style.background = color;
+            particle.style.boxShadow = `0 0 ${size}px ${color}`;
+
+            document.body.appendChild(particle);
+
+            // Animate particle
+            const endX = x + Math.cos(angle * Math.PI / 180) * distance;
+            const endY = y + Math.sin(angle * Math.PI / 180) * distance;
+
+            particle.animate([
+                { 
+                    transform: 'translate(0, 0) scale(1)', 
+                    opacity: 1 
+                },
+                { 
+                    transform: `translate(${endX - x}px, ${endY - y}px) scale(0)`, 
+                    opacity: 0 
+                }
+            ], {
+                duration: duration * 1000,
+                easing: 'ease-out'
+            });
+
+            setTimeout(() => particle.remove(), duration * 1000);
+        }
+
+        // Create rangoli particles from pichkari
+        function createRangoli(x, y) {
+            for (let i = 0; i < 30; i++) {
+                const rangoli = document.createElement('div');
+                rangoli.className = 'rangoli-particle';
+                rangoli.textContent = getRandomEmoji();
+                
+                const offsetX = (Math.random() - 0.5) * 300;
+                const offsetY = (Math.random() - 0.5) * 100;
+                
+                rangoli.style.left = (x + offsetX) + 'px';
+                rangoli.style.top = y + 'px';
+                rangoli.style.fontSize = (Math.random() * 30 + 20) + 'px';
+                rangoli.style.animationDelay = (Math.random() * 0.3) + 's';
+                rangoli.style.animationDuration = (Math.random() * 1 + 1.5) + 's';
+
+                document.body.appendChild(rangoli);
+                setTimeout(() => rangoli.remove(), 2500);
+            }
+
+            // Also create color particles
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => createColorParticle(x, y - 50), i * 30);
+            }
+        }
+
+        // Show Happy Holi popup
+        function showHoliPopup() {
+            const existingPopup = document.querySelector('.holi-popup');
+            if (existingPopup) existingPopup.remove();
+
+            const popup = document.createElement('div');
+            popup.className = 'holi-popup';
+            popup.innerHTML = `
+                <span class="close-btn" onclick="this.parentElement.remove()">✕</span>
+                <h1>🎨 Happy Holi! 🎨</h1>
+                <p style="color: white; font-size: 1.2rem; margin-top: 20px;">
+                    May your life be filled with colors of joy! 🌈
+                </p>
+            `;
+            document.body.appendChild(popup);
+
+            // Create celebration particles
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => {
+                    createColorParticle(
+                        window.innerWidth / 2 + (Math.random() - 0.5) * 200,
+                        window.innerHeight / 2
+                    );
+                }, i * 50);
+            }
+
+            // Auto close after 4 seconds
+            setTimeout(() => {
+                if (popup.parentElement) popup.remove();
+            }, 4000);
+        }
+
+        // Event Listeners
+        document.addEventListener('click', function(e) {
+            // Check if clicking on pichkari or company name
+            if (!e.target.closest('#pichkari') && !e.target.closest('#companyName')) {
+                createColorSplash(e.clientX, e.clientY);
+            }
+        });
+
+        // Pichkari click - rangoli fly
+        document.getElementById('pichkari').addEventListener('click', function(e) {
+            e.stopPropagation();
+            const rect = this.getBoundingClientRect();
+            createRangoli(rect.left + rect.width / 2, rect.top);
+        });
+
+        // Company name click - show Happy Holi
+        document.getElementById('companyName').addEventListener('click', function(e) {
+            e.stopPropagation();
+            showHoliPopup();
+        });
+
+        // Initialize
+        createFloatingBalls();
+
+        // Continuous color burst effect
+        setInterval(() => {
+            const x = Math.random() * window.innerWidth;
+            const y = Math.random() * window.innerHeight;
+            for (let i = 0; i < 3; i++) {
+                createColorParticle(x, y);
+            }
+        }, 2000);
+    </script>
+</body>
+</html>
